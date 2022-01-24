@@ -32,7 +32,7 @@ Hooks.on('init', () => {
         html.find('.file').click(ev => {
             const filePath = ev.currentTarget.dataset.path;
             const fileExtension = filePath.substring(filePath.lastIndexOf('.')).slice(1);
-            if (CONST.AUDIO_FILE_EXTENSIONS.includes(fileExtension)) {
+            if (CONST.AUDIO_FILE_EXTENSIONS[fileExtension]) {
                 previewer.play(filePath);
             } else {
                 previewer.stop();
